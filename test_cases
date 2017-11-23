@@ -1,0 +1,15 @@
+(echo -en "Host: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/1.0\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/2.0\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/0.9\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/2.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/1.1\r\nHost: localhost\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /1.sandesh HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "GET /sandesh.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n";sleep 10)| telnet 127.0.0.1 5001
+(echo -en "POST /1.html HTTP/1.1\r\nHost: localhost\r\n\r\nSANDESH\r\n\r\nPOST /2.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\nSANKETH"; sleep 10) | telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\nGET /2.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n"; sleep 10) | telnet 127.0.0.1 5001
+(echo -en "GET /1.html HTTP/1.1\r\nHost: localhost\r\n\r\nGET /2.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n"; sleep 10) | telnet 127.0.0.1 5001
+(echo -en "POST /1.html HTTP/1.1\r\nHost: localhost\r\n\r\nSANDESH\r\nSANKETH\r\nMOM\r\n\r\nGET /2.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\n"; sleep 10) | telnet 127.0.0.1 5001
+(echo -en "POST /2.html HTTP/1.1\r\nHost: localhost\r\nConnection: keep-alive\r\n\r\nSANKETH"; sleep 10) | telnet 127.0.0.1 5001
